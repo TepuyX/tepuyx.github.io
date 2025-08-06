@@ -29,6 +29,29 @@ pnpm run serve
 
 ## Deployment
 
-This site is configured to deploy to GitHub Pages at `tepuyx.com` via the CNAME file.
+### Automated Deployment (Recommended)
 
-The production build generates static files in the `public/` directory that can be deployed to any static hosting service.
+This site is configured for automated deployment to GitHub Pages via GitHub Actions:
+
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy the site
+3. The site will be available at `https://tepuyx.com` (configured via CNAME)
+
+### Manual Deployment
+
+For manual deployment, you can use the built-in deploy script:
+
+```bash
+# Build and deploy to GitHub Pages
+pnpm run deploy
+```
+
+This will:
+1. Build the site with `gatsby build`
+2. Deploy the `public/` directory to the `gh-pages` branch using `gh-pages`
+
+### Configuration
+
+- **Custom Domain**: Configured via `CNAME` file pointing to `tepuyx.com`
+- **GitHub Actions**: Automated build and deployment workflow
+- **Build Output**: Static files generated in `public/` directory
